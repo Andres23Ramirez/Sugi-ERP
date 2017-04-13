@@ -1,0 +1,2 @@
+class ContracEstablishment < ApplicationRecord
+end

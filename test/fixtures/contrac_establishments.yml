@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  wayToPay: MyString
+  porpuse: MyText
+  file: 
+  startDate: 2017-04-13
+  endDate: 2017-04-13
+
+two:
+  description: MyText
+  wayToPay: MyString
+  porpuse: MyText
+  file: 
+  startDate: 2017-04-13
+  endDate: 2017-04-13

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @contrac_establishment.description %>
+</p>
+
+<p>
+  <strong>Waytopay:</strong>
+  <%= @contrac_establishment.wayToPay %>
+</p>
+
+<p>
+  <strong>Porpuse:</strong>
+  <%= @contrac_establishment.porpuse %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @contrac_establishment.file %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @contrac_establishment.startDate %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @contrac_establishment.endDate %>
+</p>
+
+<%= link_to 'Edit', edit_contrac_establishment_path(@contrac_establishment) %> |
+<%= link_to 'Back', contrac_establishments_path %>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contrac Establishments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Waytopay</th>
+      <th>Porpuse</th>
+      <th>File</th>
+      <th>Startdate</th>
+      <th>Enddate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contrac_establishments.each do |contrac_establishment| %>
+      <tr>
+        <td><%= contrac_establishment.description %></td>
+        <td><%= contrac_establishment.wayToPay %></td>
+        <td><%= contrac_establishment.porpuse %></td>
+        <td><%= contrac_establishment.file %></td>
+        <td><%= contrac_establishment.startDate %></td>
+        <td><%= contrac_establishment.endDate %></td>
+        <td><%= link_to 'Show', contrac_establishment %></td>
+        <td><%= link_to 'Edit', edit_contrac_establishment_path(contrac_establishment) %></td>
+        <td><%= link_to 'Destroy', contrac_establishment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contrac Establishment', new_contrac_establishment_path %>
