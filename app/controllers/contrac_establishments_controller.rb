@@ -69,6 +69,8 @@ class ContracEstablishmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contrac_establishment_params
+
       params.require(:contrac_establishment).permit(:description, :wayToPay, :porpuse, :file_name, :startDate, :endDate, :establishment_id)
+
     end
 end

@@ -18,8 +18,6 @@ class ContracEstablishmentsControllerTest < ActionDispatch::IntegrationTest
   test "should create contrac_establishment" do
     assert_difference('ContracEstablishment.count') do
       post contrac_establishments_url, params: { contrac_establishment: { description: @contrac_establishment.description, endDate: @contrac_establishment.endDate, establishment_id: @contrac_establishment.establishment_id, file_name: @contrac_establishment.file_name, porpuse: @contrac_establishment.porpuse, startDate: @contrac_establishment.startDate, wayToPay: @contrac_establishment.wayToPay } }
-    end
-
     assert_redirected_to contrac_establishment_url(ContracEstablishment.last)
   end
 

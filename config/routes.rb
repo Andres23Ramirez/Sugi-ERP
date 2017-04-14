@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :contrac_establishments
   resources :bills
   resources :establishments
+
   get 'home/index'
 
   get 'administration/index'

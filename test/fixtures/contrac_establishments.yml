@@ -9,6 +9,7 @@ one:
   endDate: 2017-04-13
   establishment: one
 
+
 two:
   description: MyText
   wayToPay: MyString
@@ -17,3 +18,4 @@ two:
   startDate: 2017-04-13
   endDate: 2017-04-13
   establishment: two
+
