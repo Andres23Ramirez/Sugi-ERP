@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414030247) do
+ActiveRecord::Schema.define(version: 20170414031000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: :cascade do |t|
+    t.integer  "number"
+    t.integer  "amount"
+    t.date     "issueDate"
+    t.date     "payDate"
+    t.integer  "establishment_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["establishment_id"], name: "index_bills_on_establishment_id", using: :btree
+  end
 
   create_table "establishments", force: :cascade do |t|
     t.integer  "number"
@@ -23,4 +34,5 @@ ActiveRecord::Schema.define(version: 20170414030247) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "bills", "establishments"
 end
