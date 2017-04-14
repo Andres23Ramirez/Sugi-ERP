@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'financial/index'
+
   resources :contrac_establishments
   resources :bills
   resources :establishments
