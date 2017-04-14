@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @outflow.description %>
+</p>
+
+<p>
+  <strong>Amoun:</strong>
+  <%= @outflow.amoun %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @outflow.date %>
+</p>
+
+<%= link_to 'Edit', edit_outflow_path(@outflow) %> |
+<%= link_to 'Back', outflows_path %>

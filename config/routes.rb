@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :outflows
   resources :entries
   get 'financial/index'
 
