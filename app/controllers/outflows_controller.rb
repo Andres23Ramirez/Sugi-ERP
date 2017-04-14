@@ -1,5 +1,6 @@
 class OutflowsController < ApplicationController
   before_action :set_outflow, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin_user!
 
   # GET /outflows
   # GET /outflows.json

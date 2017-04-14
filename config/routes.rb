@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admin_users
   resources :outflows
   resources :entries
   get 'financial/index'
@@ -6,9 +7,6 @@ Rails.application.routes.draw do
   resources :contrac_establishments
   resources :bills
   resources :establishments
-
-  get 'home/index'
-
   get 'administration/index'
 
   root to: 'home#index'

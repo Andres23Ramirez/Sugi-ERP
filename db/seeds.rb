@@ -11,3 +11,5 @@ establishment1 = Establishment.find_by name: "Salome"
 ContracEstablishment.create!([{establishment: establishment1, description: "Contrato a termino indefinido ", wayToPay: "Efectivo", porpuse: "La actividad economica sera comercial de ventas de zapatos"}])
 
 Bill.create!([{number: 00001, amount: 1000000, establishment: establishment1}])
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
