@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datestart:</strong>
+  <%= @contract_employee.dateStart %>
+</p>
+
+<p>
+  <strong>Dateend:</strong>
+  <%= @contract_employee.dateEnd %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @contract_employee.salary %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @contract_employee.employee %>
+</p>
+
+<%= link_to 'Edit', edit_contract_employee_path(@contract_employee) %> |
+<%= link_to 'Back', contract_employees_path %>

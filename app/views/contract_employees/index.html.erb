@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contract Employees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Datestart</th>
+      <th>Dateend</th>
+      <th>Salary</th>
+      <th>Employee</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contract_employees.each do |contract_employee| %>
+      <tr>
+        <td><%= contract_employee.dateStart %></td>
+        <td><%= contract_employee.dateEnd %></td>
+        <td><%= contract_employee.salary %></td>
+        <td><%= contract_employee.employee %></td>
+        <td><%= link_to 'Show', contract_employee %></td>
+        <td><%= link_to 'Edit', edit_contract_employee_path(contract_employee) %></td>
+        <td><%= link_to 'Destroy', contract_employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contract Employee', new_contract_employee_path %>

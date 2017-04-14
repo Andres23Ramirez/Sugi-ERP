@@ -1,0 +1,37 @@
+<%= form_for(contract_employee) do |f| %>
+  <% if contract_employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contract_employee.errors.count, "error") %> prohibited this contract_employee from being saved:</h2>
+
+      <ul>
+      <% contract_employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dateStart %>
+    <%= f.date_select :dateStart %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dateEnd %>
+    <%= f.date_select :dateEnd %>
+  </div>
+
+  <div class="field">
+    <%= f.label :salary %>
+    <%= f.number_field :salary %>
+  </div>
+
+  <div class="field">
+    <%= f.label :employee_id %>
+    <%= f.text_field :employee_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
