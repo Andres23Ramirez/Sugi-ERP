@@ -1,31 +1,56 @@
 <p id="notice"><%= notice %></p>
+<%= @msj %>
+<h1>Egresos</h1>
 
-<h1>Outflows</h1>
+<%= form_tag outflows_path, method: :get do %>  
+        <div>
+            <%= label_tag "Tipo" %>
+            <%= select_tag "type_service", raw("<option>todos</option><option>agua</option><option>energia</option><option>gas</option><option>internet</option><option>otro</option>")%>
+        </div>
+        
+        <div >
+            <%= label_tag "Desde:" %>
+            <%= select_date(Date.current, prefix: 'desde', order: [:day, :month,:year],use_two_digit_numbers: true, start_year:2010,end_year:Date.today.year) %>
+       
+        	<%= label_tag "Hasta:" %>
+            <%= select_date(Date.current, prefix: 'hasta', order: [:day, :month,:year],use_two_digit_numbers: true, start_year:2010,end_year:Date.today.year) %>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Amoun</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <div >
+            <%= submit_tag "Generar Reporte", name: nil, class: "button" %><br><br /><br><br />
+        </div>
+<% end %>  
 
-  <tbody>
-    <% @outflows.each do |outflow| %>
-      <tr>
-      	<td><%= outflow.type_service %></td>
-        <td><%= outflow.description %></td>
-        <td><%= outflow.amoun %></td>
-        <td><%= outflow.date %></td>
-        <td><%= link_to 'Show', outflow %></td>
-        <td><%= link_to 'Edit', edit_outflow_path(outflow) %></td>
-        <td><%= link_to 'Destroy', outflow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+
+<% unless @outflows.nil? %>
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Description</th>
+	      <th>Amoun</th>
+	      <th>Date</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @outflows.each do |outflow| %>
+	      <tr>
+	      	<td><%= outflow.type_service %></td>
+	        <td><%= outflow.description %></td>
+	        <td><%= outflow.amoun %></td>
+	        <td><%= outflow.date %></td>
+	        <td><%= link_to 'Show', outflow %></td>
+	        <td><%= link_to 'Edit', edit_outflow_path(outflow) %></td>
+	        <td><%= link_to 'Destroy', outflow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+<% else %>
+	<h1><%= @msj %></h1>
+<% end %>
 
 <br>
 

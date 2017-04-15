@@ -5,7 +5,17 @@ class OutflowsController < ApplicationController
   # GET /outflows
   # GET /outflows.json
   def index
-    @outflows = Outflow.all
+
+  	if params[:type_service] == "todos"
+
+		@outflows = Outflow.all 
+
+	else params[:type_service].present?
+
+		@outflows = Outflow.type_service(params[:type_service]).date_start(params[:desde]['year']+"-"+params[:desde]['month']+"-"+params[:desde]['day']).date_end(params[:hasta]['year']+"-"+params[:hasta]['month']+"-"+params[:hasta]['day'])
+
+	end
+    
   end
 
   # GET /outflows/1
