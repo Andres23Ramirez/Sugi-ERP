@@ -15,6 +15,7 @@
   <tbody>
     <% @outflows.each do |outflow| %>
       <tr>
+      	<td><%= outflow.type_service %></td>
         <td><%= outflow.description %></td>
         <td><%= outflow.amoun %></td>
         <td><%= outflow.date %></td>

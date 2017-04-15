@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div>
+  	<%= f.text_field :type_service %>
+    <%= f.select :type_service, [['Servicio de Agua','agua'],['Servicio de luz','luz'],['Servicio de internet','internet'],['Servicio de gas','gas'],['Otros','otros']] %> 	
+  </div>
+
   <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>

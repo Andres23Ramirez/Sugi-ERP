@@ -84,11 +84,11 @@ Entry.create!([{ description: "Concurso de disfrases", amoun: 500000, date: "201
 
 puts 'Creating Outflow'
 Outflow.destroy_all
-Outflow.create!([{description: "Servio Agua",     amoun: 100000, date: "2017-02-01" }])
-Outflow.create!([{description: "Servio Energia",  amoun: 200000, date: "2017-02-01" }])
-Outflow.create!([{description: "Servio Gas",      amoun: 300000, date: "2017-02-01" }])
-Outflow.create!([{description: "Servio Internet", amoun: 400000, date: "2017-02-01" }])
-Outflow.create!([{description: "Otros",           amoun: 500000, date: "2017-02-01" }])
+Outflow.create!([{description: "Servio de Agua",     amoun: 100000, date: "2017-02-01", type_service: "agua" }])
+Outflow.create!([{description: "Servio de Energia",  amoun: 200000, date: "2017-02-01", type_service: "energia" }])
+Outflow.create!([{description: "Servio de Gas",      amoun: 300000, date: "2017-02-01", type_service: "gas"}])
+Outflow.create!([{description: "Servio de Internet", amoun: 400000, date: "2017-02-01", type_service: "internet" }])
+Outflow.create!([{description: "pago por domicilio", amoun: 500000, date: "2017-02-01", type_service: "otro" }])
 
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
