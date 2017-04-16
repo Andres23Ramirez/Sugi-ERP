@@ -23,6 +23,9 @@ show do
   index do
     selectable_column
     column :number
+    column "Establishment" do |bill|
+      link_to bill.establishment.name, admin_establishment_path(bill.establishment)
+    end
     column :amount
     column :created_at
     actions
