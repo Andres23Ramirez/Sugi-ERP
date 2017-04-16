@@ -5,7 +5,17 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+			
+	@total = 0
+	
+	if params[:desde].present?
+  		@entries = Entry.date_start(params[:desde]['year']+"-"+params[:desde]['month']+"-"+params[:desde]['day']).date_end(params[:hasta]['year']+"-"+params[:hasta]['month']+"-"+params[:hasta]['day'])
+		@entries.each { |e|
+		@total += e.amoun
+    	}
+
+	end
+	
   end
 
   # GET /entries/1

@@ -1,5 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag entries_path, method: :get do %>  
+        <div >
+            <%= label_tag "Desde:" %>
+            <%= select_date(Date.current, prefix: 'desde', order: [:day, :month,:year],use_two_digit_numbers: true, start_year:2010,end_year: Date.today.year) %>
+       
+        	<%= label_tag "Hasta:" %>
+            <%= select_date(Date.current, prefix: 'hasta', order: [:day, :month,:year],use_two_digit_numbers: true, start_year:2010,end_year:Date.today.year) %>
+        </div>
+
+        <div >
+            <%= submit_tag "Generar Reporte", name: nil, class: "button" %><br><br /><br><br />
+        </div>
+<% end %>  
+
+<% unless @entries.nil? %>
 <h1>Entries</h1>
 
 <table>
@@ -25,6 +40,9 @@
     <% end %>
   </tbody>
 </table>
+
+<h4>El total de Ingresos es : <%=@total%> </h4>
+<% end %>
 
 <br>
 
