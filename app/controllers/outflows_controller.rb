@@ -6,15 +6,22 @@ class OutflowsController < ApplicationController
   # GET /outflows.json
   def index
 
+  	@type = params[:type_service]
+
   	if params[:type_service] == "todos"
 
 		@outflows = Outflow.all 
 
-	else params[:type_service].present?
+	elsif params[:type_service].present?
 
 		@outflows = Outflow.type_service(params[:type_service]).date_start(params[:desde]['year']+"-"+params[:desde]['month']+"-"+params[:desde]['day']).date_end(params[:hasta]['year']+"-"+params[:hasta]['month']+"-"+params[:hasta]['day'])
-
+		
 	end
+
+	@total = 0
+	@outflows.each { |e|
+		@total += e.amoun
+    }
     
   end
 
@@ -26,6 +33,7 @@ class OutflowsController < ApplicationController
   # GET /outflows/new
   def new
     @outflow = Outflow.new
+    @type = params[:type_service]
   end
 
   # GET /outflows/1/edit

@@ -84,10 +84,10 @@ Entry.create!([{ description: "Concurso de disfrases", amoun: 500000, date: "201
 
 puts 'Creating Outflow'
 Outflow.destroy_all
-Outflow.create!([{description: "Servio de Agua",     amoun: 100000, date: "2017-02-01", type_service: "agua" }])
-Outflow.create!([{description: "Servio de Energia",  amoun: 200000, date: "2017-02-01", type_service: "energia" }])
-Outflow.create!([{description: "Servio de Gas",      amoun: 300000, date: "2017-02-01", type_service: "gas"}])
-Outflow.create!([{description: "Servio de Internet", amoun: 400000, date: "2017-02-01", type_service: "internet" }])
+Outflow.create!([{description: "Servio de Agua",     amoun: 100000, date: "2017-02-01", type_service: "servicios" }])
+Outflow.create!([{description: "Pago de empleado",  amoun: 200000, date: "2017-02-01", type_service: "nomina" }])
+Outflow.create!([{description: "Compras pequeñas",      amoun: 300000, date: "2017-02-01", type_service: "menor"}])
+Outflow.create!([{description: "Servio de Internet", amoun: 400000, date: "2017-02-01", type_service: "servicios" }])
 Outflow.create!([{description: "pago por domicilio", amoun: 500000, date: "2017-02-01", type_service: "otro" }])
 
 
