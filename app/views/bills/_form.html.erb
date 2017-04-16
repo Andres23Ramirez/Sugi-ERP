@@ -36,6 +36,11 @@
     <%= f.text_field :establishment_id %>
   </div>
 
+  <div>
+    <%= label_tag "Estado" %>
+    <%= select_tag "state", raw("<option>pagado</option><option>pendiente</option><option>cancelado</option>")%>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

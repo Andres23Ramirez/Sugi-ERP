@@ -22,8 +22,12 @@
 
 <p>
   <strong>Establishment:</strong>
-  <%= @bill.establishment %>
+  <%= @bill.establishment.name %>
 </p>
 
+<p>
+  <strong>Estado de pago:</strong>
+  <%= @bill.state %>
+</p>
 <%= link_to 'Edit', edit_bill_path(@bill) %> |
 <%= link_to 'Back', bills_path %>

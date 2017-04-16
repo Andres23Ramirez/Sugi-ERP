@@ -38,11 +38,11 @@ ContracEstablishment.create!([{establishment: establishment5, description: "Cont
 puts 'Creating bill'
 
 Bill.destroy_all
-Bill.create!([{number: 00001, amount: 1000000, establishment: establishment1}])
-Bill.create!([{number: 00002, amount: 2000000, establishment: establishment2}])
-Bill.create!([{number: 00003, amount: 3000000, establishment: establishment3}])
-Bill.create!([{number: 00004, amount: 4000000, establishment: establishment4}])
-Bill.create!([{number: 00005, amount: 5000000, establishment: establishment5}])
+Bill.create!([{number: 00001, amount: 1000000, establishment: establishment1, state: "pagado"}])
+Bill.create!([{number: 00002, amount: 2000000, establishment: establishment2, state: "pendiente"}])
+Bill.create!([{number: 00003, amount: 3000000, establishment: establishment3, state: "pagado"}])
+Bill.create!([{number: 00004, amount: 4000000, establishment: establishment4, state: "cancelado"}])
+Bill.create!([{number: 00005, amount: 5000000, establishment: establishment5, state: "pagado"}])
 
 
 puts 'Creating Employees'
