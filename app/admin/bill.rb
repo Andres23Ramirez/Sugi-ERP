@@ -1,8 +1,8 @@
-ActiveAdmin.register Establishment do
+ActiveAdmin.register Bill do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :number, :name, :numberPhone
+permit_params :number, :amount, :issueDate, :payDate
 #
 # or
 #
@@ -14,8 +14,7 @@ permit_params :number, :name, :numberPhone
 show do
     attributes_table do
       row :number
-      row :name
-      row :numberPhone
+      row :amount
       row :created_at
     end
     active_admin_comments
@@ -24,13 +23,12 @@ show do
   index do
     selectable_column
     column :number
-    column :name
-    column :numberPhone
+    column :amount
     column :created_at
     actions
   end
 
+  filter :amount
   filter :number
-  filter :name
-  filter :created_at
+  filter :create
 end
