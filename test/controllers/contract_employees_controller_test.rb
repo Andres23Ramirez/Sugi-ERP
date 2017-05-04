@@ -43,6 +43,7 @@ class ContractEmployeesControllerTest < ActionDispatch::IntegrationTest
       delete contract_employee_url(@contract_employee)
     end
 
-    assert_redirected_to contract_employees_url
+    assert_redirected_to contract_employee_url
   end
+
 end
