@@ -233,7 +233,7 @@ PLATFORMS
 DEPENDENCIES
   active_admin_flat_skin
   activeadmin!
-  bootstrap (~> 4.0.0.alpha6)
+  bootstrap
   byebug
   coffee-rails (~> 4.2)
   devise
