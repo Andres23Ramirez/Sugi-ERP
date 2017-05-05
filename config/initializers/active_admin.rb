@@ -30,6 +30,7 @@ ActiveAdmin.setup do |config|
       menu.add label: 'Outflow', parent: 'Modulo FI', url: "/admin/outflows"
       menu.add label: 'Establishment', parent: 'Modulo AD', url: "/admin/establishments"
       menu.add label: 'Comments', parent: 'Modulo RH', url: "/admin/comments"
+      menu.add label: 'Employee', parent: 'Modulo RH', url: "/admin/employees"
     end
   end
   # == Default Namespace
