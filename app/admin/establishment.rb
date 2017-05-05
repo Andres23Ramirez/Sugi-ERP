@@ -3,6 +3,8 @@ ActiveAdmin.register Establishment do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 permit_params :number, :name, :numberPhone
+menu false
+
 #
 # or
 #

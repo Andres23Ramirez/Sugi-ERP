@@ -17,7 +17,21 @@ ActiveAdmin.setup do |config|
   # Note: Aim for an image that's 21px high so it fits in the header.
   #
   # config.site_title_image = "logo.png"
+  config.comments_menu = false
+  config.footer = "Sugi-ERP v0.1.0"
 
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add label: 'Modulo FI', priority: 3
+      menu.add label: 'Modulo RH', priority: 4
+      menu.add label: 'Modulo AD', priority: 5
+      menu.add label: 'Bill', parent: 'Modulo FI', url: "/admin/bills"
+      menu.add label: 'Entry', parent: 'Modulo FI', url: "/admin/entries"
+      menu.add label: 'Outflow', parent: 'Modulo FI', url: "/admin/outflows"
+      menu.add label: 'Establishment', parent: 'Modulo AD', url: "/admin/establishments"
+      menu.add label: 'Comments', parent: 'Modulo RH', url: "/admin/comments"
+    end
+  end
   # == Default Namespace
   #
   # Set the default namespace each administration resource

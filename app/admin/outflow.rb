@@ -3,6 +3,7 @@ ActiveAdmin.register Outflow do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 permit_params :description, :amoun, :date
+menu false
 #
 # or
 #
