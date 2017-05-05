@@ -12,7 +12,7 @@ ActiveAdmin.register_page "Dashboard" do
                         column :number
                         column :name
                         column :numberPhone
-                        column "CREATE DATE", :created_at
+                        column :created_at
                     end
                     strong { link_to "View All Establishments", admin_establishments_path, class: 'button' }
                 end
@@ -25,7 +25,7 @@ ActiveAdmin.register_page "Dashboard" do
                         column :description
                         column :amoun
                         column :date
-                        column "CREATE DATE", :created_at
+                        column :created_at
                     end
                     strong { link_to "View All Entry", admin_entries_path, class: 'button' }
                 end
@@ -41,7 +41,7 @@ ActiveAdmin.register_page "Dashboard" do
                         column :description
                         column :amoun
                         column :date
-                        column "CREATE DATE", :created_at
+                        column :created_at
                     end
                     strong { link_to "View All Outflow", admin_outflows_path, class: 'button' }
                 end
@@ -56,7 +56,7 @@ ActiveAdmin.register_page "Dashboard" do
                           bill.establishment.name
                         end
                         column :amount
-                        column "CREATE DATE", :created_at
+                        column :created_at
                     end
                     strong { link_to "View All Bill", admin_bills_path, class: 'button' }
                 end
