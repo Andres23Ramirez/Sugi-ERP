@@ -63,6 +63,22 @@ ActiveAdmin.register_page "Dashboard" do
             end
         end
     end
+    columns do
+        column do
+            panel "Recent Employee" do
+                ul do
+                    table_for Employee.order("created_at desc").limit(5) do
+                        column :first_name
+                        column :last_name
+                        column :date_hire
+                        column :position
+                        column :created_at
+                    end
+                    strong { link_to "View All Employees", admin_employees_path, class: 'button' }
+                end
+            end
+        end
+    end
 
 
     # Here is an example of a simple dashboard with columns and panels.
