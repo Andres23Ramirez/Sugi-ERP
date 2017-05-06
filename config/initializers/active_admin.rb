@@ -25,7 +25,7 @@ ActiveAdmin.setup do |config|
       menu.add label: 'Modulo FI', priority: 3
       menu.add label: 'Modulo RH', priority: 4
       menu.add label: 'Modulo AD', priority: 5
-      menu.add label: 'Reports', priority: 6, url: "/administration"
+      menu.add label: 'Reports', priority: 2, url: "/administration"
       menu.add label: 'Bill', parent: 'Modulo FI', url: "/admin/bills"
       menu.add label: 'Entry', parent: 'Modulo FI', url: "/admin/entries"
       menu.add label: 'Outflow', parent: 'Modulo FI', url: "/admin/outflows"
