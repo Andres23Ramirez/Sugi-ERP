@@ -11,11 +11,11 @@ class AdministrationController < ApplicationController
 		@total_salary = 0
 
 		Entry.all.each do |entry|	
-			@total_amount_entries = @total_amount_entries + entry.amoun
+			@total_amount_entries = @total_amount_entries + entry.amount
 		end
 
 		Outflow.all.each do |outflow|	
-			@total_amount_outflows = @total_amount_outflows + outflow.amoun
+			@total_amount_outflows = @total_amount_outflows + outflow.price
 		end
 
 		Employee.all.each do |employee|

@@ -15,7 +15,9 @@ menu false
 show do
     attributes_table do
       row :description
-      row :amoun
+      row "Amount" do |entry|
+        money_without_cents_and_with_symbol entry.amount
+      end
       row :date
     end
     active_admin_comments
@@ -24,7 +26,9 @@ show do
   index do
     selectable_column
     column :description
-    column :amoun
+    column "Amount" do |entry|
+      money_without_cents_and_with_symbol entry.amount
+    end
     column :date
     actions
   end

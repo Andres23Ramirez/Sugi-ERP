@@ -15,7 +15,9 @@ menu false
 show do
     attributes_table do
       row :number
-      row :amount
+      row "Amount" do |bill|
+        money_without_cents_and_with_symbol bill.amount
+      end
       row :created_at
     end
     active_admin_comments
@@ -27,7 +29,9 @@ show do
     column "Establishment" do |bill|
       link_to bill.establishment.name, admin_establishment_path(bill.establishment)
     end
-    column :amount
+    column "Amount" do |bill|
+      money_without_cents_and_with_symbol bill.amount
+    end
     column :created_at
     actions
   end

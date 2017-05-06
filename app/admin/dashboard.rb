@@ -23,7 +23,9 @@ ActiveAdmin.register_page "Dashboard" do
                 ul do
                     table_for Entry.order("created_at desc").limit(5) do
                         column :description
-                        column :amoun
+                        column "Amount" do |entry|
+                            money_without_cents_and_with_symbol entry.amount
+                        end
                         column :date
                         column :created_at
                     end
@@ -39,7 +41,9 @@ ActiveAdmin.register_page "Dashboard" do
                 ul do
                     table_for Outflow.order("created_at desc").limit(5) do
                         column :description
-                        column :amoun
+                        column "Amount" do |outflow|
+                            money_without_cents_and_with_symbol outflow.price
+                        end
                         column :date
                         column :created_at
                     end
@@ -55,7 +59,9 @@ ActiveAdmin.register_page "Dashboard" do
                         column "Establishment" do |bill|
                           bill.establishment.name
                         end
-                        column :amount
+                        column "Amount" do |bill|
+                            money_without_cents_and_with_symbol bill.amount
+                        end
                         column :created_at
                     end
                     strong { link_to "View All Bill", admin_bills_path, class: 'button' }
@@ -72,6 +78,9 @@ ActiveAdmin.register_page "Dashboard" do
                         column :last_name
                         column :date_hire
                         column :position
+                        column "Salary" do |employee|
+                            money_without_cents_and_with_symbol employee.salary
+                        end
                         column :created_at
                     end
                     strong { link_to "View All Employees", admin_employees_path, class: 'button' }
