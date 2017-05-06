@@ -31,6 +31,7 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_flat_skin'
 gem 'bootstrap'
+gem 'money-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
