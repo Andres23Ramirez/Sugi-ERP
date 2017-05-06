@@ -48,11 +48,11 @@ Bill.create!([{number: 00005, amount: 5000000, establishment: establishment5, st
 puts 'Creating Employees'
 
 Employee.destroy_all
-Employee.create!([{ first_name: "Pedro", last_name: "Perez", date_hire: "2008-01-01", position: "Vigilante"}])
-Employee.create!([{ first_name: "Pablo", last_name: "Gallo", date_hire: "2008-01-01", position: "Oficios varios"}])
-Employee.create!([{ first_name: "Hector", last_name: "Marulanda", date_hire: "2008-01-01", position: "Administrador"}])
-Employee.create!([{ first_name: "Miguel", last_name: "Baroni", date_hire: "2008-01-01", position: "Logistica"}])
-Employee.create!([{ first_name: "Juana", last_name: "De Arco", date_hire: "2008-01-01", position: "Aseadora"}])
+Employee.create!([{ first_name: "Pedro", last_name: "Perez", date_hire: "2008-01-01", position: "Vigilante", salary: 600000}])
+Employee.create!([{ first_name: "Pablo", last_name: "Gallo", date_hire: "2008-01-01", position: "Oficios varios", salary: 300000}])
+Employee.create!([{ first_name: "Hector", last_name: "Marulanda", date_hire: "2008-01-01", position: "Administrador", salary: 900000}])
+Employee.create!([{ first_name: "Miguel", last_name: "Baroni", date_hire: "2008-01-01", position: "Logistica", salary: 500000}])
+Employee.create!([{ first_name: "Juana", last_name: "De Arco", date_hire: "2008-01-01", position: "Aseadora", salary: 300000}])
 
  
  empleado1 = Employee.find_by first_name: "Pedro"
@@ -75,20 +75,20 @@ Employee.create!([{ first_name: "Juana", last_name: "De Arco", date_hire: "2008-
 puts 'Creating Entries'
 
 Entry.destroy_all
-Entry.create!([{ description: "Evento de fotografia",  amoun: 500000, date: "2017-02-01"}])
-Entry.create!([{ description: "Venta de camisetas",    amoun: 578000, date: "2017-03-01"}])
-Entry.create!([{ description: "Evento de matrimonio",  amoun: 500000, date: "2017-04-01"}])
-Entry.create!([{ description: "Evento de Cumpleaños",  amoun: 500000, date: "2017-01-01"}])
-Entry.create!([{ description: "Concurso de disfrases", amoun: 500000, date: "2017-02-01"}])
+Entry.create!([{ description: "Evento de fotografia",  amount: 500000, date: "2017-02-01"}])
+Entry.create!([{ description: "Venta de camisetas",    amount: 578000, date: "2017-03-01"}])
+Entry.create!([{ description: "Evento de matrimonio",  amount: 500000, date: "2017-04-01"}])
+Entry.create!([{ description: "Evento de Cumpleaños",  amount: 500000, date: "2017-01-01"}])
+Entry.create!([{ description: "Concurso de disfrases", amount: 500000, date: "2017-02-01"}])
 
 
 puts 'Creating Outflow'
 Outflow.destroy_all
-Outflow.create!([{description: "Servio de Agua",     amoun: 100000, date: "2017-02-01", type_service: "servicios" }])
-Outflow.create!([{description: "Pago de empleado",  amoun: 200000, date: "2017-02-01", type_service: "nomina" }])
-Outflow.create!([{description: "Compras pequeñas",      amoun: 300000, date: "2017-02-01", type_service: "menor"}])
-Outflow.create!([{description: "Servio de Internet", amoun: 400000, date: "2017-02-01", type_service: "servicios" }])
-Outflow.create!([{description: "pago por domicilio", amoun: 500000, date: "2017-02-01", type_service: "otro" }])
+Outflow.create!([{description: "Servio de Agua",     price: 100000, date: "2017-02-01", type_service: "servicios" }])
+Outflow.create!([{description: "Pago de empleado",   price: 200000, date: "2017-02-01", type_service: "nomina" }])
+Outflow.create!([{description: "Compras pequeñas",   price: 300000, date: "2017-02-01", type_service: "menor"}])
+Outflow.create!([{description: "Servio de Internet", price: 400000, date: "2017-02-01", type_service: "servicios" }])
+Outflow.create!([{description: "pago por domicilio", price: 500000, date: "2017-02-01", type_service: "otro" }])
 
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
