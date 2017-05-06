@@ -15,3 +15,20 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+$(function(){
+	$('#my-modal-entry').click(function(){
+		$('#myModalEntry').modal('show')
+	});
+	$('#my-modal-outflow').click(function(){
+		$('#myModalOutflow').modal('show')
+	});
+});
+
+$(document).on("turbolinks:load", function() { 
+	$('#my-modal-entry').click(function(){
+		$('#myModalEntry').modal('show')
+	});
+	$('#my-modal-outflow').click(function(){
+		$('#myModalOutflow').modal('show')
+	});
+});

@@ -12,16 +12,21 @@
     <div class="pos-f-t">
       <nav class="navbar navbar-light" style="background-color: #e73c3c;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>Sugi-ERP
+          <span class="navbar-toggler-icon"></span>Reports
         </button>
       </nav>
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-inverse p-4">
-          
+          <div class="btn-group-vertical">
+              <button type="button" class="btn btn-secondary" id="my-modal-entry">Total Amount Entries</button>
+              <button type="button" class="btn btn-secondary" id="my-modal-outflow">Total Amount Outflows</button>
+          </div>
         </div>
       </div>
     </div>
     <br/>
+    <%= render 'layouts/modal_entry' %>
+    <%= render 'layouts/modal_outflow' %>
     <%= render 'layouts/cards' %>
     <%= yield %>
   </body>
