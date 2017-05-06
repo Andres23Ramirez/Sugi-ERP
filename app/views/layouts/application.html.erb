@@ -20,8 +20,8 @@
           <div class="btn-group-vertical">
               <button type="button" class="btn btn-secondary" id="my-modal-entry">Total Amount Entries</button>
               <button type="button" class="btn btn-secondary" id="my-modal-outflow">Total Amount Outflows</button>
-              <button type="button" class="btn btn-secondary" id="my-modal-outflow">Payment of Payroll</button>
-              <button type="button" class="btn btn-secondary" id="my-modal-outflow">Minimun Payment</button>
+              <button type="button" class="btn btn-secondary" id="my-modal-payroll">Payment of Payroll</button>
+              <button type="button" class="btn btn-secondary" id="my-modal-payment">Minimun Payment</button>
           </div>
         </div>
       </div>
@@ -29,6 +29,8 @@
     <br/>
     <%= render 'layouts/modal_entry' %>
     <%= render 'layouts/modal_outflow' %>
+    <%= render 'layouts/modal_employee' %>
+    <%= render 'layouts/modal_minimum_payment' %>
     <%= render 'layouts/cards' %>
     <%= yield %>
   </body>

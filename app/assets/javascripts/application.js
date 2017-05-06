@@ -22,6 +22,12 @@ $(function(){
 	$('#my-modal-outflow').click(function(){
 		$('#myModalOutflow').modal('show')
 	});
+	$('#my-modal-payroll').click(function(){
+		$('#myModalEmployee').modal('show')
+	});
+	$('#my-modal-payment').click(function(){
+		$('#myModalMinimunPayment').modal('show')
+	});
 });
 
 $(document).on("turbolinks:load", function() { 
@@ -30,5 +36,11 @@ $(document).on("turbolinks:load", function() {
 	});
 	$('#my-modal-outflow').click(function(){
 		$('#myModalOutflow').modal('show')
+	});
+	$('#my-modal-payroll').click(function(){
+		$('#myModalEmployee').modal('show')
+	});
+	$('#my-modal-payment').click(function(){
+		$('#myModalMinimunPayment').modal('show')
 	});
 });
