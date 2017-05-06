@@ -8,6 +8,7 @@ class AdministrationController < ApplicationController
 		@count_outflows = Outflow.all.count
 		@total_amount_entries = 0
 		@total_amount_outflows = 0
+		@total_salary = 0
 
 		Entry.all.each do |entry|	
 			@total_amount_entries = @total_amount_entries + entry.amoun
@@ -15,6 +16,10 @@ class AdministrationController < ApplicationController
 
 		Outflow.all.each do |outflow|	
 			@total_amount_outflows = @total_amount_outflows + outflow.amoun
+		end
+
+		Employee.all.each do |employee|
+			@total_salary = @total_salary + employee.salary
 		end
 	end
 end

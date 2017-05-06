@@ -1,5 +1,5 @@
 <div class="modal fade" id="myModalEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm" role="document">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Payment of Payroll</h5>
@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <i class="fa fa-money fa-3x fa-pull-left fa-border" aria-hidden="true"></i>
-        <div class="huge"><h2><%= @total_amount_entries %></h2></div>
+        <div class="huge"><h2><%= money_without_cents_and_with_symbol @total_salary %></h2></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
