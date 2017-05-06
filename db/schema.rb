@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506013001) do
+ActiveRecord::Schema.define(version: 20170506045732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,13 +48,13 @@ ActiveRecord::Schema.define(version: 20170506013001) do
 
   create_table "bills", force: :cascade do |t|
     t.integer  "number"
-    t.integer  "amount"
     t.date     "issueDate"
     t.date     "payDate"
     t.integer  "establishment_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "state"
+    t.integer  "amount_cents",     default: 0
     t.index ["establishment_id"], name: "index_bills_on_establishment_id", using: :btree
   end
 
@@ -94,10 +94,10 @@ ActiveRecord::Schema.define(version: 20170506013001) do
 
   create_table "entries", force: :cascade do |t|
     t.text     "description"
-    t.integer  "amoun"
     t.date     "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "amount_cents", default: 0
   end
 
   create_table "establishments", force: :cascade do |t|
@@ -110,11 +110,11 @@ ActiveRecord::Schema.define(version: 20170506013001) do
 
   create_table "outflows", force: :cascade do |t|
     t.text     "description"
-    t.integer  "amoun"
     t.date     "date"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "type_service"
+    t.integer  "price_cents",  default: 0
   end
 
   add_foreign_key "bills", "establishments"
