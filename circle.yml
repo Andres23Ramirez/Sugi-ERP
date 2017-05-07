@@ -2,4 +2,4 @@ deployment:
   prod:
     branch: master
     heroku:
-      appname: sugi-ERP
+      appname: sugi-erp
