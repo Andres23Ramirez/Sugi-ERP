@@ -1,6 +1,5 @@
 class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin_user!
 
   # GET /establishments
   # GET /establishments.json

@@ -1,2 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  description: MyText
+  amount_cents: 10000
+  date: 2017-04-14
 

@@ -1,28 +1,9 @@
 class OutflowsController < ApplicationController
   before_action :set_outflow, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin_user!
-
   # GET /outflows
   # GET /outflows.json
   def index
-
-  	@type = params[:type_service]
-
-  	if params[:type_service] == "todos"
-
-		@outflows = Outflow.all 
-
-	elsif params[:type_service].present?
-
-		@outflows = Outflow.type_service(params[:type_service]).date_start(params[:desde]['year']+"-"+params[:desde]['month']+"-"+params[:desde]['day']).date_end(params[:hasta]['year']+"-"+params[:hasta]['month']+"-"+params[:hasta]['day'])
-		
-	end
-
-	@total = 0
-	@outflows.each { |e|
-		@total += e.amoun
-    }
-    
+    @outflows = Outflow.all 
   end
 
   # GET /outflows/1
