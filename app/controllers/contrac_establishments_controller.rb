@@ -1,6 +1,5 @@
 class ContracEstablishmentsController < ApplicationController
   before_action :set_contrac_establishment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin_user!
 
   # GET /contrac_establishments
   # GET /contrac_establishments.json
