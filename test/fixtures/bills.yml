@@ -1,15 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  number: 
-  amount: 
+  number: 2
+  amount_cents: 100000
   issueDate: 2017-04-13
   payDate: 2017-04-13
-  establishment: one
-
-two:
-  number: 
-  amount: 
-  issueDate: 2017-04-13
-  payDate: 2017-04-13
-  establishment: two
