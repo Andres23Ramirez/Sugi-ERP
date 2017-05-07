@@ -32,6 +32,9 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_flat_skin'
 gem 'bootstrap'
 gem 'money-rails'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
