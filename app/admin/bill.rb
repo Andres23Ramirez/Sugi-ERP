@@ -21,7 +21,7 @@ show do
       row :created_at
     end
     active_admin_comments
-  end
+	end
 
   index do
     selectable_column
