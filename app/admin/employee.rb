@@ -5,18 +5,18 @@ ActiveAdmin.register Employee do
 permit_params :first_name, :last_name, :cv_file, :date_hire, :position, :salary_cents
 menu false
 
-show do
-    attributes_table do
-      row :first_name
-      row :last_name
-      row :date_hire
-      row :position
-      row "Salary" do |employee|
-        money_without_cents_and_with_symbol employee.salary
-      end
-    end
-    active_admin_comments
-  end
+	show do
+	    attributes_table do
+	      row :first_name
+	      row :last_name
+	      row :date_hire
+	      row :position
+	      row "Salary" do |employee|
+	        money_without_cents_and_with_symbol employee.salary
+	      end
+	    end
+	    active_admin_comments
+	end
 
   index do
   	selectable_column

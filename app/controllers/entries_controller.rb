@@ -9,10 +9,9 @@ class EntriesController < ApplicationController
 	
 	if params[:desde].present?
   		@entries = Entry.date_start(params[:desde]['year']+"-"+params[:desde]['month']+"-"+params[:desde]['day']).date_end(params[:hasta]['year']+"-"+params[:hasta]['month']+"-"+params[:hasta]['day'])
-		@entries.each { |e|
-		@total += e.amoun
+		@entries.each { |e| 
+			@total += e.amoun
     	}
-
 	end
 	
   end
