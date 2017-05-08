@@ -12,15 +12,15 @@ menu false
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-show do
-    attributes_table do
-      row :number
-      row "Amount" do |bill|
-        money_without_cents_and_with_symbol bill.amount
-      end
-      row :created_at
-    end
-    active_admin_comments
+	show do
+	    attributes_table do
+	      row :number
+	      row "Amount" do |bill|
+	        money_without_cents_and_with_symbol bill.amount
+	      end
+	      row :created_at
+	    end
+	    active_admin_comments
 	end
 
   index do

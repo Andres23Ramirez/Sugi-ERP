@@ -12,16 +12,16 @@ menu false
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-show do
-    attributes_table do
-      row :description
-      row "Amount" do |entry|
-        money_without_cents_and_with_symbol entry.amount
-      end
-      row :date
-    end
-    active_admin_comments
-  end
+	show do
+	    attributes_table do
+	      row :description
+	      row "Amount" do |entry|
+	        money_without_cents_and_with_symbol entry.amount
+	      end
+	      row :date
+	    end
+	    active_admin_comments
+	end
 
   index do
     selectable_column
