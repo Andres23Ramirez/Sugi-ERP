@@ -18,7 +18,7 @@ ActiveAdmin.setup do |config|
   #
   # config.site_title_image = "logo.png"
   config.comments_menu = false
-  config.footer = "Sugi-ERP v0.1.0"
+  config.footer = "Sugi-ERP v3.2.0"
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|

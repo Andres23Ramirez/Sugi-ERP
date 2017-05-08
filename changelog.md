@@ -1,51 +1,77 @@
 #Sugi-ERP 0.x Changelog
-0.4.3 (07-05-2017)
-###patch changes
--Add file for deploy continuos
-
-0.4.0 (06-05-2017)
+3.2.0 (21-04-2017)
 ------
 ### Minor changes
--Fixed testing
--Create testing for model validates
+-Generar reportes
 
-0.3.4 (05-05-2017)
-------
-### patch changes
--Added buttons in reports dashboard page
--Added javascript to buttons
--Added total payroll in modal employee
--Changed seed file
-
-0.3.0 (04-05-2017)
+3.1.1 (21-04-2017)
 ------
 ### Minor changes
--Monetize amount columns
--Added money rails gem
--Added salary to employees
+-Registrar empleados
 
-### patch changes
--Added title in administration page
--Added salary in employees page
--Added modal for payment of payroll
+### Patch changes
+-Agregar estilos para el registro de empleados
 
-0.2.6 (01-05-2017)
+3.0.0 (21-04-2017)
 ------
-### patch changes
--Added style in administration page
--Added number and redirect in statistics
--Added modal for show total amounts
+### Important changes
+-Se creo el modulo de recursos humanos
 
-0.2.0 (21-04-2017)
+2.1.4 (21-04-2017)
 ------
 ### Minor changes
--Fix test ready for start to make unitary test
--Cooment contend of test for test
--Integrated modules menu
--Fixed employee page
+-Gestionar datos de ingresos y egresos
 
-### patch changes
--Added recent employee in dashboard page
+### Patch changes
+-Agregar estilos para los ingresos y egresos
+
+2.1.3 (21-04-2017)
+------
+### Minor changes
+-Gestionar datos de facturacion
+
+### Patch changes
+-Agregar estilos para la facturacion
+
+2.1.2 (21-04-2017)
+------
+### Minor changes
+-Ingresos y Egresos
+
+2.1.1 (21-04-2017)
+------
+### Minor changes
+-Facturacion
+
+2.0.0 (21-04-2017)
+------
+### Important changes
+-Se creo el modulo financiero
+
+1.2.3 (21-04-2017)
+------
+### Minor changes
+-Crear comentarios
+
+1.2.2 (21-04-2017)
+------
+### Patch changes
+-Gestionar datos del establecimiento
+
+1.2.1 (21-04-2017)
+------
+###  Minor changes
+-Registro de establecimientos
+
+1.2.0 (01-05-2017)
+------
+### Important changes
+-Se creo el modulo administrativo
+
+1.1.0 (21-04-2017)
+------
+### Important changes
+-Sistema inicio de seccion
 
 0.1.0 (16-04-2017)
 ------
