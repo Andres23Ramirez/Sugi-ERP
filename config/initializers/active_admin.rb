@@ -25,13 +25,13 @@ ActiveAdmin.setup do |config|
       menu.add label: 'Modulo FI', priority: 3
       menu.add label: 'Modulo RH', priority: 4
       menu.add label: 'Modulo AD', priority: 5
-      menu.add label: 'Reports', priority: 2, url: "/administration"
-      menu.add label: 'Bill', parent: 'Modulo FI', url: "/admin/bills"
-      menu.add label: 'Entry', parent: 'Modulo FI', url: "/admin/entries"
-      menu.add label: 'Outflow', parent: 'Modulo FI', url: "/admin/outflows"
-      menu.add label: 'Establishment', parent: 'Modulo AD', url: "/admin/establishments"
-      menu.add label: 'Comments', parent: 'Modulo RH', url: "/admin/comments"
-      menu.add label: 'Employee', parent: 'Modulo RH', url: "/admin/employees"
+      menu.add label: 'Reportes', priority: 2, url: "/administration"
+      menu.add label: 'Facturas', parent: 'Modulo FI', url: "/admin/bills"
+      menu.add label: 'Entradas', parent: 'Modulo FI', url: "/admin/entries"
+      menu.add label: 'Salidas', parent: 'Modulo FI', url: "/admin/outflows"
+      menu.add label: 'Establecimientos', parent: 'Modulo AD', url: "/admin/establishments"
+      menu.add label: 'Comentarios', parent: 'Modulo RH', url: "/admin/comments"
+      menu.add label: 'Trabajadores', parent: 'Modulo RH', url: "/admin/employees"
     end
   end
   # == Default Namespace
@@ -261,7 +261,6 @@ ActiveAdmin.setup do |config|
       # Only show XML & PDF options
       admin.download_links = [:csv]
   end
-
   # == Pagination
   #
   # Pagination is enabled by default for all resources.
@@ -272,7 +271,7 @@ ActiveAdmin.setup do |config|
   # You can control the max per page count too.
   #
   # config.max_per_page = 10_000
-
+  config.before_filter :set_admin_locale
   # == Filters
   #
   # By default the index screen includes a "Filters" sidebar on the right
