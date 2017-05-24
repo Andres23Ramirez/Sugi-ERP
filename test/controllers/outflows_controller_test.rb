@@ -15,14 +15,6 @@ class OutflowsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create outflow" do
-    assert_difference('Outflow.count') do
-      post outflows_url, params: { outflow: { price_cents: @outflow.price_cents, date: @outflow.date, description: @outflow.description } }
-    end
-
-    assert_redirected_to outflow_url(Outflow.last)
-  end
-
   test "should show outflow" do
     get outflow_url(@outflow)
     assert_response :success
@@ -31,11 +23,6 @@ class OutflowsControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_outflow_url(@outflow)
     assert_response :success
-  end
-
-  test "should update outflow" do
-    patch outflow_url(@outflow), params: { outflow: { price_cents: @outflow.price_cents, date: @outflow.date, description: @outflow.description } }
-    assert_redirected_to outflow_url(@outflow)
   end
 
   test "should destroy outflow" do

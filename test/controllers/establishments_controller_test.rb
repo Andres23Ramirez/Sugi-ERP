@@ -15,14 +15,6 @@ class EstablishmentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create establishment" do
-    assert_difference('Establishment.count') do
-      post establishments_url, params: { establishment: { name: @establishment.name, number: @establishment.number, numberPhone: @establishment.numberPhone } }
-    end
-
-    assert_redirected_to establishment_url(Establishment.last)
-  end
-
   test "should show establishment" do
     get establishment_url(@establishment)
     assert_response :success
