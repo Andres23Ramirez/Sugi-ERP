@@ -67,4 +67,4 @@ Outflow.create!([{description: "Servio de Internet", price: 400000, date: "2017-
 Outflow.create!([{description: "pago por domicilio", price: 500000, date: "2017-02-01", type_service: "otro" }])
 
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'dropeholguin1994@gmail.com', password: 'sugi-erppassword', password_confirmation: 'sugi-erppassword')

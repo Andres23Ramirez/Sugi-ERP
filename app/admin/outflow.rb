@@ -2,7 +2,7 @@ ActiveAdmin.register Outflow do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :description, :amoun, :date
+permit_params :description, :price_cents, :date, :type_service
 menu false
 #
 # or
@@ -12,16 +12,16 @@ menu false
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-	show do
-	    attributes_table do
-	      row :description
-	      column "Amount" do |outflow|
-	        money_without_cents_and_with_symbol outflow.price
-	      end
-	      row :date
-	    end
-	    active_admin_comments
-	end
+show do
+    attributes_table do
+      row :description
+      row "Amount" do |outflow|
+        money_without_cents_and_with_symbol outflow.price
+      end
+      row :date
+    end
+    active_admin_comments
+  end
 
   index do
     selectable_column

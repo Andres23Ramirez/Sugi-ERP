@@ -2,7 +2,7 @@ ActiveAdmin.register Bill do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :number, :amount, :issueDate, :payDate
+permit_params :number, :amount_cents, :issueDate, :payDate, :state, :establishment_id
 menu false
 #
 # or
@@ -27,7 +27,11 @@ menu false
     selectable_column
     column :number
     column "Establishment" do |bill|
-      link_to bill.establishment.name, admin_establishment_path(bill.establishment)
+      if bill.establishment.present?
+        link_to bill.establishment.name, admin_establishment_path(bill.establishment)
+      else
+        "No esta asociado a un establecimiento"
+      end
     end
     column "Amount" do |bill|
       money_without_cents_and_with_symbol bill.amount

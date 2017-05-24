@@ -32,6 +32,10 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_flat_skin'
 gem 'bootstrap'
 gem 'money-rails'
+gem 'rails-i18n', '~> 5.0.0'
+gem "aws-ses", "~> 0.6.0", require: 'aws/ses'
+gem 'aws-sdk', '~> 2.3'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end

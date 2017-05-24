@@ -6,7 +6,7 @@ ActiveAdmin.register_page "Dashboard" do
 
     columns do
         column do
-            panel "Recent Establisment" do
+            panel "Establecimientos recientes" do
                 ul do
                     table_for Establishment.order("created_at desc").limit(5) do
                         column :number
@@ -14,12 +14,12 @@ ActiveAdmin.register_page "Dashboard" do
                         column :numberPhone
                         column :created_at
                     end
-                    strong { link_to "View All Establishments", admin_establishments_path, class: 'button' }
+                    strong { link_to "Ver Todos los Establecimientos", admin_establishments_path, class: 'button' }
                 end
             end
         end
         column do
-            panel "Recent Entry" do
+            panel "Ingresos recientes" do
                 ul do
                     table_for Entry.order("created_at desc").limit(5) do
                         column :description
@@ -29,7 +29,7 @@ ActiveAdmin.register_page "Dashboard" do
                         column :date
                         column :created_at
                     end
-                    strong { link_to "View All Entry", admin_entries_path, class: 'button' }
+                    strong { link_to "Ver Todos los Ingresos", admin_entries_path, class: 'button' }
                 end
             end
         end
@@ -37,7 +37,7 @@ ActiveAdmin.register_page "Dashboard" do
 
     columns do
         column do
-            panel "Recent Outflow" do
+            panel "Salidas recientes" do
                 ul do
                     table_for Outflow.order("created_at desc").limit(5) do
                         column :description
@@ -47,31 +47,35 @@ ActiveAdmin.register_page "Dashboard" do
                         column :date
                         column :created_at
                     end
-                    strong { link_to "View All Outflow", admin_outflows_path, class: 'button' }
+                    strong { link_to "Ver Todas las Salidas", admin_outflows_path, class: 'button' }
                 end
             end
         end
         column do
-            panel "Recent Bill" do
+            panel "Facturas recientes" do
                 ul do
                     table_for Bill.order("created_at desc").limit(5) do
                         column :number
                         column "Establishment" do |bill|
-                          bill.establishment.name
+                            if bill.establishment.present?
+                                bill.establishment.name
+                            else
+                                "No esta asociado a un establecimiento"
+                            end
                         end
                         column "Amount" do |bill|
                             money_without_cents_and_with_symbol bill.amount
                         end
                         column :created_at
                     end
-                    strong { link_to "View All Bill", admin_bills_path, class: 'button' }
+                    strong { link_to "Ver Todas las Facturas", admin_bills_path, class: 'button' }
                 end
             end
         end
     end
     columns do
         column do
-            panel "Recent Employee" do
+            panel "Trabajadores recientes" do
                 ul do
                     table_for Employee.order("created_at desc").limit(5) do
                         column :first_name
@@ -83,7 +87,7 @@ ActiveAdmin.register_page "Dashboard" do
                         end
                         column :created_at
                     end
-                    strong { link_to "View All Employees", admin_employees_path, class: 'button' }
+                    strong { link_to "Ver Todos los Trabajadores", admin_employees_path, class: 'button' }
                 end
             end
         end
