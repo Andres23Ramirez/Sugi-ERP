@@ -57,7 +57,11 @@ ActiveAdmin.register_page "Dashboard" do
                     table_for Bill.order("created_at desc").limit(5) do
                         column :number
                         column "Establishment" do |bill|
-                          bill.establishment.name
+                            if bill.establishment.present?
+                                bill.establishment.name
+                            else
+                                "No esta asociado a un establecimiento"
+                            end
                         end
                         column "Amount" do |bill|
                             money_without_cents_and_with_symbol bill.amount
