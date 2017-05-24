@@ -16,7 +16,7 @@ class EntriesController < ApplicationController
 	
   end
 
-  # GET /entries/1
+ 
   # GET /entries/1.json
   def show
   end
