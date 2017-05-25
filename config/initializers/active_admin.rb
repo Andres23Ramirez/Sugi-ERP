@@ -33,6 +33,20 @@ ActiveAdmin.setup do |config|
       menu.add label: 'Trabajadores', parent: 'Modulo RH', url: "/admin/employees"
     end
   end
+
+  config.namespace :admin do |admin|
+    admin.build_menu :utility_navigation do |menu|
+      menu.add :label => "Lenguajes" do |lang|
+        lang.add :label => "English",:url => proc { url_for(:locale => 'en') }, id: 'i18n-en', :priority => 1
+        lang.add :label => "Español",:url => proc { url_for(:locale => 'es') }, id: 'i18n-es', :priority => 2
+      end
+      menu.add :label => proc { display_name current_active_admin_user },
+                :url => '#',
+                :id => 'current_user',
+                :if => proc { current_active_admin_user? }
+      admin.add_logout_button_to_menu menu
+    end
+  end
   # == Default Namespace
   #
   # Set the default namespace each administration resource
@@ -270,7 +284,6 @@ ActiveAdmin.setup do |config|
   # You can control the max per page count too.
   #
   # config.max_per_page = 10_000
-  config.before_filter :set_admin_locale
   # == Filters
   #
   # By default the index screen includes a "Filters" sidebar on the right
