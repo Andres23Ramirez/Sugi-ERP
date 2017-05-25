@@ -29,12 +29,11 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'devise'
 
 gem 'activeadmin', github: 'activeadmin'
-gem 'active_admin_flat_skin'
 gem 'bootstrap'
 gem 'money-rails'
-gem 'rails-i18n', '~> 5.0.0'
 gem "aws-ses", "~> 0.6.0", require: 'aws/ses'
 gem 'aws-sdk', '~> 2.3'
+gem 'active_skin'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'

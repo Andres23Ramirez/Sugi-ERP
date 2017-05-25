@@ -7,11 +7,11 @@ menu false
 
 	show do
 	    attributes_table do
-	      row :first_name
-	      row :last_name
-	      row :date_hire
-	      row :position
-	      row "Salary" do |employee|
+        row :first_name
+        row :last_name
+        row :date_hire
+        row :position
+	      row "Salario" do |employee|
 	        money_without_cents_and_with_symbol employee.salary
 	      end
 	    end
@@ -24,7 +24,7 @@ menu false
   	column :last_name
   	column :date_hire
   	column :position
-    column "Salary" do |employee|
+    column "Salario" do |employee|
       money_without_cents_and_with_symbol employee.salary
     end
     actions

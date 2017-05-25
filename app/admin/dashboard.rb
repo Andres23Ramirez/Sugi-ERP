@@ -23,11 +23,11 @@ ActiveAdmin.register_page "Dashboard" do
                 ul do
                     table_for Entry.order("created_at desc").limit(5) do
                         column :description
-                        column "Amount" do |entry|
+                        column "monto" do |entry|
                             money_without_cents_and_with_symbol entry.amount
                         end
                         column :date
-                        column :created_at
+                        column "fecha de creación", :created_at
                     end
                     strong { link_to "Ver Todos los Ingresos", admin_entries_path, class: 'button' }
                 end
@@ -41,11 +41,11 @@ ActiveAdmin.register_page "Dashboard" do
                 ul do
                     table_for Outflow.order("created_at desc").limit(5) do
                         column :description
-                        column "Amount" do |outflow|
+                        column "monto" do |outflow|
                             money_without_cents_and_with_symbol outflow.price
                         end
                         column :date
-                        column :created_at
+                        column "fecha de creación", :created_at
                     end
                     strong { link_to "Ver Todas las Salidas", admin_outflows_path, class: 'button' }
                 end
@@ -56,17 +56,17 @@ ActiveAdmin.register_page "Dashboard" do
                 ul do
                     table_for Bill.order("created_at desc").limit(5) do
                         column :number
-                        column "Establishment" do |bill|
+                        column "establecimiento" do |bill|
                             if bill.establishment.present?
                                 bill.establishment.name
                             else
                                 "No esta asociado a un establecimiento"
                             end
                         end
-                        column "Amount" do |bill|
+                        column "Monto" do |bill|
                             money_without_cents_and_with_symbol bill.amount
                         end
-                        column :created_at
+                        column "fecha de creación", :created_at
                     end
                     strong { link_to "Ver Todas las Facturas", admin_bills_path, class: 'button' }
                 end
@@ -82,10 +82,10 @@ ActiveAdmin.register_page "Dashboard" do
                         column :last_name
                         column :date_hire
                         column :position
-                        column "Salary" do |employee|
+                        column "salario" do |employee|
                             money_without_cents_and_with_symbol employee.salary
                         end
-                        column :created_at
+                        column "fecha de creación", :created_at
                     end
                     strong { link_to "Ver Todos los Trabajadores", admin_employees_path, class: 'button' }
                 end

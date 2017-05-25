@@ -14,11 +14,11 @@ menu false
 # end
 	show do
 	    attributes_table do
-	      row :number
-	      row "Amount" do |bill|
+        row :number
+	      row "Monto" do |bill|
 	        money_without_cents_and_with_symbol bill.amount
 	      end
-	      row :created_at
+        row :created_at
 	    end
 	    active_admin_comments
 	end
@@ -26,21 +26,21 @@ menu false
   index do
     selectable_column
     column :number
-    column "Establishment" do |bill|
+    column "Establecimiento" do |bill|
       if bill.establishment.present?
         link_to bill.establishment.name, admin_establishment_path(bill.establishment)
       else
         "No esta asociado a un establecimiento"
       end
     end
-    column "Amount" do |bill|
+    column "Monto" do |bill|
       money_without_cents_and_with_symbol bill.amount
     end
     column :created_at
     actions
   end
 
-  filter :amount
+  filter :amount_cents
   filter :number
-  filter :create
+  filter :created_at
 end

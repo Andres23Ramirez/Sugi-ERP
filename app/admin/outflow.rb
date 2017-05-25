@@ -15,7 +15,7 @@ menu false
 show do
     attributes_table do
       row :description
-      row "Amount" do |outflow|
+      row "Monto" do |outflow|
         money_without_cents_and_with_symbol outflow.price
       end
       row :date
@@ -26,7 +26,7 @@ show do
   index do
     selectable_column
     column :description
-    column "Amount" do |outflow|
+    column "Monto" do |outflow|
       money_without_cents_and_with_symbol outflow.price
     end
     column :date
